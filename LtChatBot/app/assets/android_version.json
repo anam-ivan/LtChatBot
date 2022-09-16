@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Cupcake",
+    "url": "cupcake"
+  },
+  {
+    "name": "Donut",
+    "url": "donut"
+  },
+  {
+    "name": "Eclairs",
+    "url": "eclairs"
+  },
+  {
+    "name": "Froyo",
+    "url": "froyo"
+  },
+  {
+    "name": "Gingerbread",
+    "url": "gingerbread"
+  },
+  {
+    "name": "Honeycomb",
+    "url": "honeycomb"
+  },
+
+  {
+    "name": "Icecream",
+    "url": "icecream"
+  },
+  {
+    "name": "Jellybean",
+    "url": "jellybean"
+  },
+
+  {
+    "name": "Kitkat",
+    "url": "kitkat"
+  },
+  {
+    "name": "Lolipop",
+    "url": "lolipop"
+  },
+
+  {
+    "name": "Marshmallow",
+    "url": "marshmallow"
+  },
+  {
+    "name": "Nougat",
+    "url": "nougat"
+  },
+  {
+    "name": "Oreo",
+    "url": "oreo"
+  },
+  {
+    "name": "Pie",
+    "url": "pie"
+  }
+]

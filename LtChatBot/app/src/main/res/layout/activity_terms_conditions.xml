@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.SetNewReminderActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tb_header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="1dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_back"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:src="@drawable/ic_cross"
+                        android:textAllCaps="false" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:text="@string/terms_conditions"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_header">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_terms_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/dark_grey"
+                android:fontFamily="@font/gilroy_regular"
+                android:layout_margin="@dimen/_8sdp" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!--<androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:layout_marginBottom="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_set_reminder"
+            app:layout_constraintTop_toBottomOf="@+id/tb_header">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:text="@string/terms_conditions"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:text="Introduction"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:text="These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Webiste Name accessible at Website.com."
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_16ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:text="These Terms will be applied fully and affect to your use of this Website."
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_16ssp" />
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_set_reminder"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="@string/i_accept_all_the_terms_amp_conditions"
+            android:fontFamily="@font/gilroy_semi_bold"
+            app:cornerRadius="@dimen/_8sdp"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:backgroundTint="@color/blue"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

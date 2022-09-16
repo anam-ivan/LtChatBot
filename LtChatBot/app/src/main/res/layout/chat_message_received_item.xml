@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_greetings"
+            style="@style/CustomCardViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="@dimen/_2sdp">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_greetings"
+                    android:layout_width="@dimen/_165sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Demo"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_patient_health_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_greetings"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@drawable/layout_blue_back"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_health_details"
+                        android:layout_width="@dimen/_165sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="Body Weight"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_receive_time_stamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv_greetings"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/gilroy_semi_bold"
+            android:text="5:39 PM"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textColor="@color/m_grey"
+            android:textSize="@dimen/_10ssp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_help"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_help"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_help"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rv_side_effects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_side_effects"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_emergency_care"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_emergency_care"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_medicine_routine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_medicine_routine"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:padding="@dimen/_3sdp"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_update_vitals"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_update_vitals"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_sixth_time_stamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_issue_duration"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:text="5:40 PM"
+                            android:visibility="gone"
+                            android:textColor="@color/m_grey"
+                            android:textSize="@dimen/_10ssp" />-->
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_receive_two_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_help"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="5:40 PM"
+                android:visibility="gone"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_side_effects_issue"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_side_effects_text"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_side_effects_text"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rv_existing_side_effects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_existing_side_effects"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_previous_side_effects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_previous_side_effects"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_tap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_tap_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:padding="@dimen/_3sdp"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_new_side_effects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_new_side_effects"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_receive_four_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_side_effects_issue"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="5:40 PM"
+                android:visibility="gone"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_side_effects"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="@dimen/_2sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_side_effect_text"
+                        android:layout_width="@dimen/_165sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="Demo"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_side_effects"
+                        style="@style/ThinnerChip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_side_effect_text"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textAppearance="@style/chipText"
+                        android:visibility="visible"
+                        app:chipSpacingHorizontal="4dp"
+                        app:singleSelection="true" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:layout_below="@+id/chip_side_effects"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:weightSum="1">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_cancel"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/black"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/cancel"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp"
+                            app:cornerRadius="@dimen/_8sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_ok"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/blue"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="Ok"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp"
+                            app:cornerRadius="@dimen/_8sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_side_effect_support_text"
+                        android:layout_width="@dimen/_165sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_btn"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_receive_three_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_side_effects"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="5:40 PM"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_issue_duration"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_issue_text"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_issue_text"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rv_last_48_hours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_last_48_hours"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_last_week"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_last_week"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_last_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_last_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:padding="@dimen/_3sdp"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rv_more_than_a_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:background="@drawable/chat_child_blue_back"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_more_than_a_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_fifth_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_issue_duration"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="5:40 PM"
+                android:visibility="gone"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_possible_problems"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_possible_problem_text"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_possible_problems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/_8ssp"
+                        tools:listitem="@layout/my_health_card_row" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_possible_problem_text_two"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_possible_problems_timestamp"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_medium"
+                android:textAlignment="textStart"
+                android:visibility="gone"
+                android:layout_below="@+id/cv_possible_problems"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_possible_problems_final"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_possible_problem_text_final"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_possible_problems_final"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/_8ssp"
+                        tools:listitem="@layout/my_health_card_row" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_possible_problems_final_timestamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cv_issue_duration"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/gilroy_semi_bold"
+                        android:text="5:40 PM"
+                        android:visibility="gone"
+                        android:textColor="@color/m_grey"
+                        android:textSize="@dimen/_10ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_stop_tki"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#EE3359">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_stop_tki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_tki_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_stop_tki"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:text="5:40 PM"
+                android:textColor="@color/m_grey"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

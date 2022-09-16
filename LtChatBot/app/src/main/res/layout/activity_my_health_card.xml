@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/top_to_bottom_gradient"
+            tools:context=".ui.MyHealthVitals">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_header"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btn_back"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:src="@drawable/ic_cross"
+                            android:textAllCaps="false" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"
+                        android:text="@string/my_health_card"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/tb_header"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/chat_send"
+                        app:tabIconTint="@color/greyy"
+                        app:tabIndicatorColor="@color/blue"
+                        app:tabIndicatorHeight="@dimen/_2sdp"
+                        app:tabSelectedTextColor="@color/black"
+                        app:tabTextAppearance="@style/MyCustomTextAppearance"
+                        app:tabTextColor="@color/black_mat"/>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <!--<androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_health_card_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:padding="@dimen/_8ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/tb_header"
+                        tools:listitem="@layout/my_health_card_row" />-->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_progressive"
+                        app:strokeColor="@color/blue"
+                        app:strokeWidth="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:elevation="@dimen/_4sdp"
+                        android:visibility="gone"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_health_card_details">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_progressive"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0">
+
+
+                                <TextView
+                                    android:id="@+id/tv_progressive_heading"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/progressive_data"
+                                    android:textSize="@dimen/_14ssp"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    app:layout_constraintBottom_toBottomOf="@+id/cl_progressive"
+                                    app:layout_constraintStart_toStartOf="@+id/cl_progressive"
+                                    app:layout_constraintTop_toTopOf="@+id/cl_progressive" />
+
+                                <ImageView
+                                    android:id="@+id/iv_progressive_arrow_button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    app:srcCompat="@android:drawable/arrow_down_float"
+                                    app:tint="@color/blue"
+                                    android:padding="@dimen/_4sdp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/cl_progressive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/cl_progressive"
+                                    tools:ignore="MissingConstraints" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_progressive_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cl_progressive">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gilroy_semi_bold"
+                                    android:gravity="center"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/regularize"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14ssp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_regularize"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:layout_marginTop="@dimen/_6sdp"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/my_health_card_row" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gilroy_semi_bold"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_12sdp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/_1st_line_of_treatment"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14ssp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_first_line_treatment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:layout_marginTop="@dimen/_6sdp"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/my_health_card_row" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gilroy_semi_bold"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_12sdp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/_2nd_line_of_treatment"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14ssp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_second_line_treatment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:layout_marginTop="@dimen/_6sdp"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/my_health_card_row" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/gilroy_semi_bold"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_12sdp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/_3rd_line_of_treatment"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_14ssp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_third_line_treatment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:layout_marginTop="@dimen/_6sdp"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/my_health_card_row" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!--<com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_transactional"
+                        app:strokeColor="@color/blue"
+                        app:strokeWidth="1dp"
+                        android:visibility="gone"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:elevation="@dimen/_4sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_health_card_details">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:padding="@dimen/_8sdp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_transactional"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0">
+
+
+                                <TextView
+                                    android:id="@+id/tv_transactional_heading"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:text="@string/transactional"
+                                    android:textSize="@dimen/_14ssp"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    app:layout_constraintBottom_toBottomOf="@+id/cl_transactional"
+                                    app:layout_constraintStart_toStartOf="@+id/cl_transactional"
+                                    app:layout_constraintTop_toTopOf="@+id/cl_transactional" />
+
+                                <ImageView
+                                    android:id="@+id/iv_transactional_arrow_button"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    app:srcCompat="@android:drawable/arrow_down_float"
+                                    app:tint="@color/blue"
+                                    android:padding="@dimen/_4sdp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/cl_transactional"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/cl_transactional"
+                                    tools:ignore="MissingConstraints" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_transactional_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cl_transactional">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_transactional_details"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    tools:itemCount="3"
+                                    tools:listitem="@layout/my_health_card_row" />
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>-->
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.core.widget.NestedScrollView>
+
+            <!--<RelativeLayout
+                android:id="@+id/btnExportPdf"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:background="@drawable/bottom_btn_back"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center|center_horizontal"
+                    android:drawableStart="@drawable/ic_download"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/white"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:gravity="center_horizontal"
+                    android:text="Export PDF"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp" />
+            </RelativeLayout>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

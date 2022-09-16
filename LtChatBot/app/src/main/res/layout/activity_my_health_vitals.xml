@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient"
+            android:animateLayoutChanges="true"
+            tools:context=".ui.MyHealthVitals">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_1sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btn_back"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:src="@drawable/ic_back" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:text="@string/my_health_vitals"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_info"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:src="@drawable/ic_info"/>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintBottom_toTopOf="@id/add_fab"
+                app:layout_constraintTop_toBottomOf="@id/tb_header">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_health_vitals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingBottom="@dimen/_25sdp"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/my_health_vitals_row" />
+
+            </RelativeLayout>
+
+            <!--<androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_health_vitals"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/_25sdp"
+                app:layout_constraintBottom_toTopOf="@id/add_fab"
+                app:layout_constraintTop_toBottomOf="@id/tb_header"
+                app:layout_constraintVertical_bias="0.0"
+                tools:itemCount="3"
+                tools:layout_editor_absoluteX="-50dp"
+                tools:listitem="@layout/my_health_vitals_row" />-->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:src="@drawable/ic_add"
+                android:background="@color/white"
+                app:backgroundTint="@color/navy_blue"
+                app:fabSize="normal"
+                android:layout_marginBottom="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

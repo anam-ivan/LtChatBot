@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient"
+            tools:context=".ui.ProfileActivity">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_header"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:elevation="@dimen/_1sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_12sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/patient_profile"
+                        android:textColor="@color/greyy"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_settings"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_22sdp"
+                        android:layout_toStartOf="@+id/iv_notifications"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_setting" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_notifications"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_notification" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+                app:layout_constraintTop_toBottomOf="@+id/tb_header">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_doctor_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_header">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_160sdp"
+                            android:background="@drawable/profile_back">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/iv_profile"
+                                android:layout_width="@dimen/_48sdp"
+                                android:layout_height="@dimen/_48sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:src="@drawable/img_placeholder"
+                                app:civ_border_color="#ff91a0"
+                                app:civ_border_width="@dimen/_2sdp"
+                                tools:ignore="ContentDescription" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_patient_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:layout_toEndOf="@+id/iv_profile"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_cr_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_patient_name"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/iv_profile"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_is_a_smoker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_cr_no"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/iv_profile"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <!--<androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_registration_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_is_a_smoker"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/tv_address"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="Registration Date"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />-->
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_call"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:layout_below="@+id/tv_is_a_smoker"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/tv_address"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_call" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_is_a_smoker"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_toEndOf="@+id/iv_call"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text=""
+                                android:textColor="@color/light_red"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_location"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:layout_below="@+id/iv_profile"
+                                android:layout_marginStart="@dimen/_12sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_location" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/iv_profile"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/iv_location"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text=""
+                                android:textColor="@color/light_red"
+                                android:textSize="@dimen/_11ssp" />
+
+
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_below="@+id/iv_call"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:background="@color/white" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_diagnosis_header"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/view"
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:layout_marginBottom="@dimen/_4sdp"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="Date of Diagnosis :"
+                                android:textColor="@color/light_red"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_diagnosis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/view"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_toEndOf="@+id/tv_diagnosis_header"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_last_visit_date_header"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_diagnosis_header"
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:layout_marginBottom="@dimen/_4sdp"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text="Last Visit Date:"
+                                android:textColor="@color/light_red"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_last_visit_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_diagnosis"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_toEndOf="@+id/tv_last_visit_date_header"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_reg_date_header"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_last_visit_date_header"
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text="Registration Date:"
+                                android:textColor="@color/light_red"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_reg_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_last_visit_date"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_toEndOf="@+id/tv_reg_date_header"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_patient_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:weightSum="3.08"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_doctor_section">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_age"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/age"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_weight=".06" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_16sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/weight"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_weight=".04" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_height"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_height"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_12ssp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/height"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:id="@+id/rl_health_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:background="@drawable/health_card_bg"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_patient_details">
+
+                    <androidx.appcompat.widget.AppCompatCheckedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/view_health_card"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_doctor_section_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:weightSum="2.08"
+                    app:layout_constraintTop_toBottomOf="@+id/rl_health_card">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_health_vitals"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_health" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/my_health_vitals"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_weight=".08" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_side_effects"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_violet_head" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/my_side_effect_history"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_doctor_section_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:weightSum="2.08"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_doctor_section_one">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_document"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_documents" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/my_documents"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_weight=".08" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_medicine"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:elevation="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_28sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_reminder" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:text="@string/medicine_reminder"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bottom_nav"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                android:elevation="@dimen/_8sdp"
+                app:cardBackgroundColor="@color/blue"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:weightSum="4">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/bottom_nav_home"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_home"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_home"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bottom_dot_home"
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            app:tint="@color/white"
+                            android:src="@drawable/ic_black_dot"
+                            android:visibility="invisible" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/bottom_nav_chat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_chat_bot"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bottom_dot_chat"
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            app:tint="@color/white"
+                            android:src="@drawable/ic_black_dot"
+                            android:visibility="invisible" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/bottom_nav_person"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_person"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_14sdp"
+                                android:layout_centerInParent="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_person" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_person_fill"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_centerInParent="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_person_fill"
+                                android:visibility="invisible" />
+
+                        </RelativeLayout>
+
+                        <!--<androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_person"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_person" />-->
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bottom_dot_person"
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:scaleType="fitXY"
+                            app:tint="@color/white"
+                            android:src="@drawable/ic_black_dot"
+                            android:visibility="invisible" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/bottom_nav_hamburger"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_menu" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bottom_dot_hamburger"
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:scaleType="fitXY"
+                            app:tint="@color/white"
+                            android:src="@drawable/ic_black_dot"
+                            android:visibility="invisible" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

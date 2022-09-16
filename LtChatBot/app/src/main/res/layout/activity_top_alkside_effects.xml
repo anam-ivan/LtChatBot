@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.TopALKSideEffectsActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_back"
+                    android:textAllCaps="false" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="@string/top_alk_side_effects"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_all_symptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_symptoms"
+        android:textColor="@color/dark_grey"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:selectAllOnFocus="false"
+        android:linksClickable="false"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_header" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_marked_symptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:linksClickable="false"
+        android:selectAllOnFocus="false"
+        android:text="@string/marked"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/tv_all_symptoms"
+        app:layout_constraintTop_toBottomOf="@+id/tb_header" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_marked_symptoms_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:linksClickable="false"
+        android:selectAllOnFocus="false"
+        android:text=""
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/tv_marked_symptoms"
+        app:layout_constraintTop_toBottomOf="@+id/tb_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_all_symptoms">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_alk_all_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:overScrollMode="never" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_alk_marked_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

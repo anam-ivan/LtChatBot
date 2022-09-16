@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rootView"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_health_vitals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:linksClickable="false"
+                android:selectAllOnFocus="false"
+                android:text="@string/health_vitals"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_toEndOf="@+id/tv_health_vitals"
+                android:fontFamily="@font/gilroy_semi_bold"
+                android:linksClickable="false"
+                android:selectAllOnFocus="false"
+                android:text="07 Jun 22"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/_12ssp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:visibility="invisible">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:elevation="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_centerVertical="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_4sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_calender"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/_2sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_calender"
+                            android:tint="@color/black" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_tooltip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/gilroy_semi_bold"
+                        android:text="Info"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_info"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:src="@drawable/ic_eye" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+               <!-- <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/btn_download"
+                    android:background="@color/divider_color" />-->
+
+                <!--<RelativeLayout
+                    android:id="@+id/rr_body_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/sp_4"
+                    android:paddingBottom="@dimen/sp_4">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_health_vitals"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_body_weight"
+                        tools:ignore="ContentDescription" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_toEndOf="@+id/iv_health_vitals"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/body_weight"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_toEndOf="@+id/tv_title"
+                        android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="62"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    &lt;!&ndash;<androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_toEndOf="@+id/tv_value"
+                        android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="Kg"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />&ndash;&gt;
+                </RelativeLayout>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/child_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_tooltip"
+                    android:overScrollMode="never"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/child_data_list" />
+
+                <View
+                    android:id="@+id/view_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/child_recycler_view"
+                    android:background="@color/divider_color" />
+
+                <!--<androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_two"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:drawableStart="@drawable/ic_delete"
+                    android:drawablePadding="@dimen/_6ssp"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/delete"
+                    android:textAllCaps="false"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_10ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_two"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_edit"
+                    android:drawablePadding="@dimen/_6ssp"
+                    android:focusable="true"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_4sdp"
+                    android:text="Edit Info"
+                    android:textAllCaps="false"
+                    android:textColor="@color/hex_blue"
+                    android:textSize="@dimen/_10ssp" />-->
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

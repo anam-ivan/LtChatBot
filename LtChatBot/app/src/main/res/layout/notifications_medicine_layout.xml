@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/ll_doctor_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.18"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:backgroundTint="@color/pill_color"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/chat_send_back"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tv_time"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_pill" />
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.6"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:cardElevation="4dp"
+            android:layout_gravity="center_vertical"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_medicine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:padding="@dimen/_2sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/medicine_name"
+                        android:textColor="@color/greyy"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_medicine_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:src="@drawable/ic_add"
+                        android:text="Acetaminophen"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_no_of_pill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_medicine"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/no_of_pill"
+                        android:textColor="@color/greyy"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_no_of_pills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:src="@drawable/ic_add"
+                        android:text="01"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_dosage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_no_of_pill"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/dosage"
+                        android:textColor="@color/greyy"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_dosage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:src="@drawable/ic_add"
+                        android:text="PC (After Lunch)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_dosage"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:alpha="0.8"
+                        android:background="@color/red"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btn_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view_two"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:drawableStart="@drawable/ic_sad"
+                            android:drawablePadding="@dimen/_4ssp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_horizontal"
+                            android:text="@string/medicine_skipped"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/green"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btn_medical_taken"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view_two"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:drawableStart="@drawable/ic_sad"
+                            android:drawablePadding="@dimen/_4ssp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_horizontal"
+                            android:text="@string/medicine_taken"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_weight="0.2"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_cross"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

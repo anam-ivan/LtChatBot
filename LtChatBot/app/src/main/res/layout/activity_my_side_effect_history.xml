@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            tools:context=".ui.MySideEffectHistory">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_header"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:elevation="@dimen/_1sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btn_back"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:src="@drawable/ic_back"
+                            android:textAllCaps="false" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:text="@string/my_side_effect_history"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                android:layout_marginBottom="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tb_header">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_existing_side_effects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:linksClickable="false"
+                        android:selectAllOnFocus="false"
+                        android:text="@string/existing_side_effects"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/_12ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_preview_side_effects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_toEndOf="@+id/tv_existing_side_effects"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:linksClickable="false"
+                        android:selectAllOnFocus="false"
+                        android:text="@string/previous_size_effects"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_existing_side_effects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textAppearance="@style/chipText"
+                    app:chipSpacingHorizontal="4dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_existing_side_effects"
+                    app:singleSelection="true" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_previous_side_effects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textAppearance="@style/chipText"
+                    app:chipSpacingHorizontal="4dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_existing_side_effects"
+                    app:singleSelection="true"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_side_effect_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"
+                        android:text="@string/side_effect"
+                        android:textColor="@color/greyy"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_side_effect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_toEndOf="@+id/tv_side_effect_header"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_exiting_side_effect_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        tools:itemCount="3"
+                        android:visibility="gone"
+                        tools:listitem="@layout/side_effects_list_row" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_previous_side_effect_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        tools:itemCount="3"
+                        android:visibility="gone"
+                        tools:listitem="@layout/side_effects_list_row" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

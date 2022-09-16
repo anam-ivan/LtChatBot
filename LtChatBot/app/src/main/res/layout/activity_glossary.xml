@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/gradient"
+        tools:context=".ui.KnowYourSideEffectsActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tb_header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="2dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_back"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:src="@drawable/ic_back"
+                        android:textAllCaps="false" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:gravity="center"
+                    android:text="@string/glossary"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+        <RelativeLayout
+            android:id="@+id/rr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/tb_header">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_medical_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/gilroy_medium"
+                android:linksClickable="false"
+                android:selectAllOnFocus="false"
+                android:text="@string/medical_terms"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_prescription_abbreviations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_toEndOf="@+id/tv_medical_terms"
+                android:fontFamily="@font/gilroy_medium"
+                android:linksClickable="false"
+                android:selectAllOnFocus="false"
+                android:text="@string/prescription_abbreviations"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/_12ssp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38ssp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:background="@drawable/search_back"
+            app:layout_constraintTop_toBottomOf="@id/rr_layout">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_medical_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sp_44"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:textColorHint="@color/m_grey"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/sp_6"
+                android:paddingEnd="@dimen/sp_10"
+                android:visibility="gone"
+                android:hint="@string/search_here"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_prescription_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sp_44"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:textColorHint="@color/m_grey"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/_10ssp"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/sp_6"
+                android:paddingEnd="@dimen/sp_10"
+                android:visibility="gone"
+                android:hint="@string/search_here"
+                android:textSize="@dimen/_12ssp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_search">
+
+            <in.myinnos.alphabetsindexfastscrollrecycler.IndexFastScrollRecyclerView
+                android:id="@+id/rv_medical_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <in.myinnos.alphabetsindexfastscrollrecycler.IndexFastScrollRecyclerView
+                android:id="@+id/rv_prescription_abbreviations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

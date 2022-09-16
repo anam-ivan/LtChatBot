@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            tools:context=".ui.AddHealthVitals">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_header"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btn_back"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:src="@drawable/ic_cross"
+                            android:textAllCaps="false" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:text="@string/add_health_vitals"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <!--<androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_save"
+                app:layout_constraintTop_toBottomOf="@+id/tb_header">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_body_weight"
+                    app:layout_constraintTop_toBottomOf="@id/tb_header"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:layout_height="@dimen/_95sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_body_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/sp_4"
+                        android:paddingBottom="@dimen/sp_4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_body"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_19sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_body_weight"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/iv_body_weight_header"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_toEndOf="@+id/iv_body"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/body_weight_"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llEmail"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@drawable/health_vitals_items_back"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_body_weight_decrease"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_remove"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_body_weight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="62"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_body_weight_increase"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/black" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/health_items_item_bg">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text="KG"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+
+                            &lt;!&ndash;<androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_settings"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/tv_country_code"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_arrow_down" />&ndash;&gt;
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_blood_pressure"
+                    app:layout_constraintTop_toBottomOf="@id/ll_body_weight"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:layout_height="@dimen/_95sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_blood_pressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/sp_4"
+                        android:paddingBottom="@dimen/sp_4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_blood_pressure"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_19sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_blood_pressure"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_toEndOf="@+id/iv_blood_pressure"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/blood_pressure_"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@drawable/health_vitals_items_back"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_pressure_decrease"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_remove"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_blood_pressure"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="152"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_pressure_increase"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/black" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/health_items_item_bg">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text="mmHg"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_blood_sugar_pp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_95sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/ll_blood_pressure">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_blood_sugar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/sp_4"
+                        android:paddingBottom="@dimen/sp_4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_blood_sugar"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_19sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_blood_sugar"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_toEndOf="@+id/iv_blood_sugar"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/blood_sugar_"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@drawable/health_vitals_items_back"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_sugar_decrease"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_remove"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_blood_sugar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="180"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_sugar_increase"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/black" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/health_items_item_bg">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text="mg/dL"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_blood_sugar_fasting"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_95sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/ll_blood_sugar_pp">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_blood_sugar_fasting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/sp_4"
+                        android:paddingBottom="@dimen/sp_4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_blood_sugar_fasting"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_19sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_blood_sugar"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_toEndOf="@+id/iv_blood_sugar_fasting"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/blood_sugar_fasting_"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@drawable/health_vitals_items_back"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_sugar_fasting_decrease"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_remove"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_blood_sugar_fasting"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="108"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_blood_sugar_fasting_increase"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/black" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/health_items_item_bg">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text="mg/dL"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_oxygen_saturation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_95sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/ll_blood_sugar_fasting">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_oxygen_saturation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/sp_4"
+                        android:paddingBottom="@dimen/sp_4">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_oxygen"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_19sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_blood_sugar"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_toEndOf="@+id/iv_oxygen"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/oxygen"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@drawable/health_vitals_items_back"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_oxygen_fasting_decrease"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_remove"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_iv_oxygen_fasting_decrease_fasting_quantity"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gilroy_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iv_iv_oxygen_fasting_decrease_fasting_increase"
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/black" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/health_items_item_bg">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/gilroy_semi_bold"
+                                android:text="%"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_13ssp" />
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_add_new_vital"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/divider_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/ll_blood_sugar_fasting">
+
+                    &lt;!&ndash;<androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_two"
+                        android:layout_gravity="center|center_horizontal"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:drawableStart="@drawable/ic_add_round"
+                        android:drawablePadding="@dimen/_4ssp"
+                        android:fontFamily="@font/gilroy_semi_bold"
+                        android:gravity="center_horizontal"
+                        android:text="@string/add_new_vital"
+                        android:textAllCaps="false"
+                        android:textColor="@color/hex_blue"
+                        android:textSize="@dimen/_14ssp" />&ndash;&gt;
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:alpha="0.8"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_sad"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_add_round"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_my_chats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_toEndOf="@+id/iv_sad"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:text="@string/add_new_vital"
+                                android:textColor="@color/hex_blue"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </RelativeLayout>
+
+                        &lt;!&ndash;<androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btn_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view_two"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:drawableStart="@drawable/ic_sad"
+                            android:drawablePadding="@dimen/_4ssp"
+                            android:fontFamily="@font/gilroy_semi_bold"
+                            android:gravity="center_horizontal"
+                            android:text="@string/medicine_skipped"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />&ndash;&gt;
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>-->
+
+            <!--<androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_add_new_vital"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@color/divider_color"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/rv_health_vitals">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_two"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableStart="@drawable/ic_add_round"
+                    android:drawablePadding="@dimen/_4ssp"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@string/add_new_vital"
+                    android:textAllCaps="false"
+                    android:textColor="@color/hex_blue"
+                    android:textSize="@dimen/_14ssp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_health_vitals"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toTopOf="@+id/ll_add_new_vital"
+                app:layout_constraintTop_toBottomOf="@+id/tb_header"
+                tools:itemCount="3"
+                tools:listitem="@layout/health_vitals_element_list_row" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_add_new_vital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/divider_color"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_add"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_add_round" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_my_chats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/iv_add"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/add_new_vital"
+                        android:textColor="@color/hex_blue"
+                        android:textSize="@dimen/_13ssp" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!--<com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:cornerRadius="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

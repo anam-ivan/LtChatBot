@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:padding="@dimen/_6sdp"
+    android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/faq_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_weight="0.9"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/gilroy_semi_bold"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Is chemotherapy the only treatment option for my lung cancer?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp" />
+
+                <ImageView
+                    android:id="@+id/iv_expand"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_plus" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:id="@+id/view_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:layout_constraintTop_toBottomOf="@+id/ll_linear"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@color/faq_divider"
+                android:paddingBottom="@dimen/_4sdp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expandableLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_linear">
+
+                <TextView
+                    android:id="@+id/faq_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:text="Yes. Smoking is the leading risk factor for lung cancer. But lung cancer also occurs in people who have never smoked or who did not have prolonged exposure to secondhand smoke. Other risks include exposure to asbestos, radon and other environmental chemicals. Non-smokers account for about 10 percent of lung cancer patients, and they have a higher incidence of mutations that may be treated with targeted therapies."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/faq_divider"
+                    android:paddingBottom="@dimen/_4sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/faq_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
